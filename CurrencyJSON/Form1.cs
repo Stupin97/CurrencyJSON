@@ -15,6 +15,7 @@ namespace CurrencyJSON
         public Form1()
         {
             InitializeComponent();
+Console.Read();
         }
     }
 }
