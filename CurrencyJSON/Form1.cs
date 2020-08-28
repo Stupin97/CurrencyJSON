@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,8 +26,12 @@ namespace CurrencyJSON
             string json;
             using (WebClient webclient = new WebClient())
             {
-                json = webclient.DownloadString(url);
+                //json = webclient.DownloadString(url);
+                json = Encoding.UTF8.GetString(webclient.DownloadData(url));
             }
+
+            Сurrency currency = JsonConvert.DeserializeObject<Сurrency>(json);
+            //Console.WriteLine(currency.Valute.Aud.Name.ToString());
         }
     }
 }
