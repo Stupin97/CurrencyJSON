@@ -1,0 +1,10 @@
+D:\Project\CurrencyJSON\CurrencyJSON\bin\Debug\CurrencyJSON.exe.config
+D:\Project\CurrencyJSON\CurrencyJSON\bin\Debug\CurrencyJSON.exe
+D:\Project\CurrencyJSON\CurrencyJSON\bin\Debug\CurrencyJSON.pdb
+D:\Project\CurrencyJSON\CurrencyJSON\obj\Debug\CurrencyJSON.csprojAssemblyReference.cache
+D:\Project\CurrencyJSON\CurrencyJSON\obj\Debug\CurrencyJSON.Form1.resources
+D:\Project\CurrencyJSON\CurrencyJSON\obj\Debug\CurrencyJSON.Properties.Resources.resources
+D:\Project\CurrencyJSON\CurrencyJSON\obj\Debug\CurrencyJSON.csproj.GenerateResource.cache
+D:\Project\CurrencyJSON\CurrencyJSON\obj\Debug\CurrencyJSON.csproj.CoreCompileInputs.cache
+D:\Project\CurrencyJSON\CurrencyJSON\obj\Debug\CurrencyJSON.exe
+D:\Project\CurrencyJSON\CurrencyJSON\obj\Debug\CurrencyJSON.pdb

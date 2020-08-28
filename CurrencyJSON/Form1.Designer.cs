@@ -28,13 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Refresh = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // Refresh
+            // 
+            this.Refresh.Location = new System.Drawing.Point(642, 93);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(92, 50);
+            this.Refresh.TabIndex = 0;
+            this.Refresh.TabStop = false;
+            this.Refresh.Text = "Обновить";
+            this.Refresh.UseVisualStyleBackColor = true;
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Refresh);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private new System.Windows.Forms.Button Refresh;
     }
 }
 
