@@ -32,10 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.url = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtFrom = new System.Windows.Forms.TextBox();
-            this.txtIn = new System.Windows.Forms.TextBox();
-            this.listFromTo = new System.Windows.Forms.ComboBox();
+            this.labelFrom = new System.Windows.Forms.Label();
+            this.labelIn = new System.Windows.Forms.Label();
             this.listInTo = new System.Windows.Forms.ComboBox();
+            this.listFromTo = new System.Windows.Forms.ComboBox();
+            this.txtIn = new System.Windows.Forms.TextBox();
+            this.txtFrom = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +72,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labelFrom);
+            this.groupBox1.Controls.Add(this.labelIn);
             this.groupBox1.Controls.Add(this.listInTo);
             this.groupBox1.Controls.Add(this.listFromTo);
             this.groupBox1.Controls.Add(this.txtIn);
@@ -81,27 +85,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Converter";
             // 
-            // txtFrom
+            // labelFrom
             // 
-            this.txtFrom.Location = new System.Drawing.Point(6, 72);
-            this.txtFrom.Name = "txtFrom";
-            this.txtFrom.Size = new System.Drawing.Size(111, 20);
-            this.txtFrom.TabIndex = 5;
+            this.labelFrom.AutoSize = true;
+            this.labelFrom.Location = new System.Drawing.Point(123, 75);
+            this.labelFrom.Name = "labelFrom";
+            this.labelFrom.Size = new System.Drawing.Size(52, 13);
+            this.labelFrom.TabIndex = 10;
+            this.labelFrom.Text = "labelFrom";
             // 
-            // txtIn
+            // labelIn
             // 
-            this.txtIn.Location = new System.Drawing.Point(214, 72);
-            this.txtIn.Name = "txtIn";
-            this.txtIn.Size = new System.Drawing.Size(119, 20);
-            this.txtIn.TabIndex = 6;
-            // 
-            // listFromTo
-            // 
-            this.listFromTo.FormattingEnabled = true;
-            this.listFromTo.Location = new System.Drawing.Point(6, 19);
-            this.listFromTo.Name = "listFromTo";
-            this.listFromTo.Size = new System.Drawing.Size(181, 21);
-            this.listFromTo.TabIndex = 7;
+            this.labelIn.AutoSize = true;
+            this.labelIn.Location = new System.Drawing.Point(339, 75);
+            this.labelIn.Name = "labelIn";
+            this.labelIn.Size = new System.Drawing.Size(38, 13);
+            this.labelIn.TabIndex = 9;
+            this.labelIn.Text = "labelIn";
             // 
             // listInTo
             // 
@@ -110,6 +110,32 @@
             this.listInTo.Name = "listInTo";
             this.listInTo.Size = new System.Drawing.Size(180, 21);
             this.listInTo.TabIndex = 8;
+            this.listInTo.Text = "In";
+            this.listInTo.SelectedIndexChanged += new System.EventHandler(this.listInTo_SelectedIndexChanged);
+            // 
+            // listFromTo
+            // 
+            this.listFromTo.FormattingEnabled = true;
+            this.listFromTo.Location = new System.Drawing.Point(6, 19);
+            this.listFromTo.Name = "listFromTo";
+            this.listFromTo.Size = new System.Drawing.Size(181, 21);
+            this.listFromTo.TabIndex = 7;
+            this.listFromTo.Text = "From";
+            this.listFromTo.SelectedIndexChanged += new System.EventHandler(this.listFromTo_SelectedIndexChanged);
+            // 
+            // txtIn
+            // 
+            this.txtIn.Location = new System.Drawing.Point(214, 72);
+            this.txtIn.Name = "txtIn";
+            this.txtIn.Size = new System.Drawing.Size(119, 20);
+            this.txtIn.TabIndex = 6;
+            // 
+            // txtFrom
+            // 
+            this.txtFrom.Location = new System.Drawing.Point(6, 72);
+            this.txtFrom.Name = "txtFrom";
+            this.txtFrom.Size = new System.Drawing.Size(111, 20);
+            this.txtFrom.TabIndex = 5;
             // 
             // Form1
             // 
@@ -139,6 +165,8 @@
         private System.Windows.Forms.TextBox txtIn;
         private System.Windows.Forms.ComboBox listFromTo;
         private System.Windows.Forms.ComboBox listInTo;
+        private System.Windows.Forms.Label labelFrom;
+        private System.Windows.Forms.Label labelIn;
     }
 }
 

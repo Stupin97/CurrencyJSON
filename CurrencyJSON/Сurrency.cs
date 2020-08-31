@@ -49,6 +49,9 @@ namespace CurrencyJSON
         public string Name { get; set; }
         public decimal Value { get; set; }
         public decimal Previous { get; set; }
+
+        //Костыль..
+        public string Property { get; set; }
     }
 
     public class AUD : СurrencyCountry {}
