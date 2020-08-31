@@ -14,24 +14,44 @@ namespace CurrencyJSON
 {
     public partial class Form1 : Form
     {
+        Converter converter;
         public Form1()
         {
             InitializeComponent();
             Console.Read();
+            converter = new Converter();
+
         }
 
         private void Refresh_Click(object sender, EventArgs e)
         {
-            string url = "https://www.cbr-xml-daily.ru/daily_json.js";
-            string json;
-            using (WebClient webclient = new WebClient())
-            {
-                //json = webclient.DownloadString(url);
-                json = Encoding.UTF8.GetString(webclient.DownloadData(url));
-            }
+            converter.Сurrency = Сurrency.GetСurrency(url.Text);
+            List<СurrencyCountry> сurrencyCountries = new List<СurrencyCountry>{
+                converter.Сurrency.Valute.Aud,
+                converter.Сurrency.Valute.Azn,
+                converter.Сurrency.Valute.Gbp,
+                converter.Сurrency.Valute.Amd,
+                converter.Сurrency.Valute.Byn,
+                converter.Сurrency.Valute.Bgn,
+                converter.Сurrency.Valute.Brl,
+                converter.Сurrency.Valute.Huf,
+                converter.Сurrency.Valute.Hkd,
+                converter.Сurrency.Valute.Usd,
+                converter.Сurrency.Valute.Eur,
+                converter.Сurrency.Valute.Kzt,
+                converter.Сurrency.Valute.Cad,
+                converter.Сurrency.Valute.Cny,
+                converter.Сurrency.Valute.Try,
+                converter.Сurrency.Valute.Uah
+            };
 
-            Сurrency currency = JsonConvert.DeserializeObject<Сurrency>(json);
-            //Console.WriteLine(currency.Valute.Aud.Name.ToString());
+            foreach(var i in сurrencyCountries)
+            {
+                listFromTo.Items.Add(i.Name);
+                listInTo.Items.Add(i.Name);
+            }
+            
+
         }
     }
 }

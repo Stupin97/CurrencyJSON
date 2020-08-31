@@ -1,8 +1,10 @@
 ﻿using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace CurrencyJSON
 {
@@ -10,6 +12,15 @@ namespace CurrencyJSON
     {
         public DateTime Date { get; set; }
         public Valute Valute { get; set; }
+
+        public static Сurrency GetСurrency(string url)
+        {
+            using (WebClient webclient = new WebClient())
+            {
+                string json = Encoding.UTF8.GetString(webclient.DownloadData(url));
+                return JsonConvert.DeserializeObject<Сurrency>(json);
+            }
+        }
     }
 
     //К сожалению такой JSON file
