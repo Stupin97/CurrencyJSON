@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Refresh = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.url = new System.Windows.Forms.Label();
@@ -38,7 +39,9 @@
             this.listFromTo = new System.Windows.Forms.ComboBox();
             this.txtIn = new System.Windows.Forms.TextBox();
             this.txtFrom = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Refresh
@@ -125,6 +128,7 @@
             // 
             // txtIn
             // 
+            this.txtIn.Enabled = false;
             this.txtIn.Location = new System.Drawing.Point(214, 72);
             this.txtIn.Name = "txtIn";
             this.txtIn.Size = new System.Drawing.Size(119, 20);
@@ -136,6 +140,12 @@
             this.txtFrom.Name = "txtFrom";
             this.txtFrom.Size = new System.Drawing.Size(111, 20);
             this.txtFrom.TabIndex = 5;
+            this.txtFrom.TextChanged += new System.EventHandler(this.txtFrom_TextChanged);
+            this.txtFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrom_KeyPress);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // Form1
             // 
@@ -150,6 +160,7 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +178,7 @@
         private System.Windows.Forms.ComboBox listInTo;
         private System.Windows.Forms.Label labelFrom;
         private System.Windows.Forms.Label labelIn;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 

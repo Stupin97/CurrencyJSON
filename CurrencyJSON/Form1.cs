@@ -74,11 +74,35 @@ namespace CurrencyJSON
         private void listFromTo_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelFrom.Text = сurrencyCountries[listFromTo.SelectedIndex].Property.ToUpper();
+            txtFrom.Text = "";
+            txtIn.Text = "";
         }
 
         private void listInTo_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelIn.Text = сurrencyCountries[listInTo.SelectedIndex].Property.ToUpper();
+            txtIn.Text = "";
+            txtFrom.Text = "";
+        }
+
+        private void txtFrom_TextChanged(object sender, EventArgs e)
+        {
+            if (listFromTo.SelectedIndex == -1 || listInTo.SelectedIndex == -1)
+            {
+                errorProvider.SetError(listFromTo, "Выберите из списка");
+                errorProvider.SetError(listInTo, "Выберите из списка");
+                txtFrom.Text = "";
+                return;
+            }
+
+            if (txtFrom.Text != "")
+                txtIn.Text = converter.Calculations(Convert.ToDecimal(txtFrom.Text), сurrencyCountries[listFromTo.SelectedIndex].Value, сurrencyCountries[listInTo.SelectedIndex].Value).ToString();
+        }
+
+        private void txtFrom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            e.Handled = !(char.IsDigit(c) || c == ',' || c == '\b');
         }
     }
 }

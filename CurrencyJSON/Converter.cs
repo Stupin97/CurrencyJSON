@@ -12,5 +12,10 @@ namespace CurrencyJSON
     {
         public Сurrency Сurrency { get; set; }
         public Converter() { }
+
+        public decimal Calculations(decimal str, decimal from, decimal @in)
+        {
+            return str * from / @in;
+        }
     }
 }
