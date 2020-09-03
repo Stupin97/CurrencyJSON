@@ -1,13 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CurrencyJSON
@@ -21,7 +13,6 @@ namespace CurrencyJSON
             InitializeComponent();
             Console.Read();
             converter = new Converter();
-
         }
 
         private void Refresh_Click(object sender, EventArgs e)
@@ -85,6 +76,8 @@ namespace CurrencyJSON
             txtFrom.Text = "";
         }
 
+        //private 
+
         private void txtFrom_TextChanged(object sender, EventArgs e)
         {
             if (listFromTo.SelectedIndex == -1 || listInTo.SelectedIndex == -1)
@@ -103,6 +96,22 @@ namespace CurrencyJSON
         {
             char c = e.KeyChar;
             e.Handled = !(char.IsDigit(c) || c == ',' || c == '\b');
+        }
+
+        private void listFromTo_Click(object sender, EventArgs e)
+        {
+            if (txtFrom.Text != "")
+            {
+                HistoryTxtBox.Text += "\t" + txtFrom.Text + " " + сurrencyCountries[listFromTo.SelectedIndex].Property.ToUpper() + " -> " + txtIn.Text + " " + сurrencyCountries[listInTo.SelectedIndex].Property.ToUpper() + "\n\t";
+            }
+        }
+
+        private void listInTo_Click(object sender, EventArgs e)
+        {
+            if (txtFrom.Text != "")
+            {
+                HistoryTxtBox.Text += "\t" + txtFrom.Text + " " + сurrencyCountries[listFromTo.SelectedIndex].Property.ToUpper() + " -> " + txtIn.Text + " " + сurrencyCountries[listInTo.SelectedIndex].Property.ToUpper() + "\n\t";
+            }
         }
     }
 }

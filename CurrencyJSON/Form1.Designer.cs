@@ -40,8 +40,11 @@
             this.txtIn = new System.Windows.Forms.TextBox();
             this.txtFrom = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.HistoryTxtBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Refresh
@@ -115,6 +118,7 @@
             this.listInTo.TabIndex = 8;
             this.listInTo.Text = "In";
             this.listInTo.SelectedIndexChanged += new System.EventHandler(this.listInTo_SelectedIndexChanged);
+            this.listInTo.Click += new System.EventHandler(this.listInTo_Click);
             // 
             // listFromTo
             // 
@@ -125,6 +129,7 @@
             this.listFromTo.TabIndex = 7;
             this.listFromTo.Text = "From";
             this.listFromTo.SelectedIndexChanged += new System.EventHandler(this.listFromTo_SelectedIndexChanged);
+            this.listFromTo.Click += new System.EventHandler(this.listFromTo_Click);
             // 
             // txtIn
             // 
@@ -147,11 +152,32 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.HistoryTxtBox);
+            this.groupBox2.Location = new System.Drawing.Point(510, 83);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(226, 252);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "History";
+            // 
+            // HistoryTxtBox
+            // 
+            this.HistoryTxtBox.Enabled = false;
+            this.HistoryTxtBox.Location = new System.Drawing.Point(6, 19);
+            this.HistoryTxtBox.Multiline = true;
+            this.HistoryTxtBox.Name = "HistoryTxtBox";
+            this.HistoryTxtBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.HistoryTxtBox.Size = new System.Drawing.Size(214, 227);
+            this.HistoryTxtBox.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.url);
             this.Controls.Add(this.label1);
@@ -161,6 +187,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,6 +207,8 @@
         private System.Windows.Forms.Label labelFrom;
         private System.Windows.Forms.Label labelIn;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox HistoryTxtBox;
     }
 }
 
